@@ -22,10 +22,15 @@ return {
                 capabilities = capabilities
             })
             lspconfig.rust_analyzer.setup({
-                capabilities = capabilities})
+                capabilities = capabilities,
+                cargo = {
+                    allFeatures = true,
+                },
+            })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, {})
         end
     },
 }

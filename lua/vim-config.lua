@@ -6,9 +6,5 @@ vim.cmd("set number")
 vim.cmd("set numberwidth=1")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.api.nvim_set_keymap("!", "<F5>", '<Cmd>:wa<CR><Cmd>:TermExec cmd="cargo run" dir="./" open=0<CR>', { noremap = true})
-
-
-
-
-
+vim.keymap.set({"n","i"}, "<F5>", '<Cmd>:wa<CR><Cmd>:TermExec cmd="cargo run" dir="./" direction="float"<CR>', { noremap = true})
+vim.keymap.set({"n","i"}, "<F6>", '<Cmd>:wa<CR><Cmd>:TermExec cmd="cargo test -- --nocapture" dir="./" direction="float"<CR>', { noremap = true})
