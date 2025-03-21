@@ -12,7 +12,7 @@ return {
     {
         'nvim-telescope/telescope-ui-select.nvim',
         config = function()
-            local ignore_filetypes_list = { "%.jpg", "%.png", "%.ico" }
+            local ignore_filetypes_list = { "%.jpg", "%.png", "%.ico", "%.aseprite" }
             require('telescope').setup({
                 extensions = {
                     ['ui-select'] = {

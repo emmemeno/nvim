@@ -1,7 +1,7 @@
 return {
     'akinsho/toggleterm.nvim', version = "*",
         opts = {
-            direction = "float",
+            direction = "horizontal",
             open_mapping = [[<c-\>]],
         },
         config = true,
