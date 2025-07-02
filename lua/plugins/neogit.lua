@@ -5,7 +5,7 @@ return {
     "sindrets/diffview.nvim",        -- optional - Diff integration
 
     -- Only one of these is needed.
-    "nvim-telescope/telescope.nvim", -- optional
+    "echasnovski/mini.nvim",         -- optional
   },
  config = true
 }
