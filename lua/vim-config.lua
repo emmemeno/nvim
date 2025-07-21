@@ -29,6 +29,7 @@ vim.keymap.set({"n", "v"}, "-", function()
       MiniFiles.reveal_cwd()
     end, { desc = "Open Mini Files" })
 vim.keymap.set({'n', 'i' }, '<C-p>', '<Cmd>:Pick files<CR>', {})
-vim.keymap.set({'n', 'i' }, '<leader>fg', '<Cmd>:Pick grep<CR>', {})
-vim.keymap.set('n', '<leader><space>', '<Cmd>:Pick buffers<CR>', {})
+vim.keymap.set('n', '<leader>fg', '<Cmd>:Pick grep<CR>', {})
+vim.keymap.set('n', '<leader><backspace>', '<Cmd>:Pick buffers<CR>', {})
+
 
