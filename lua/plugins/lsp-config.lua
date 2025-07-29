@@ -28,7 +28,7 @@ return {
                 },
             })
             vim.keymap.set('n', '<leader>ck', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.definition, {})
+            vim.keymap.set('n', '<leader>cc', vim.lsp.buf.definition, {})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
             vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, {})
             vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, {})
