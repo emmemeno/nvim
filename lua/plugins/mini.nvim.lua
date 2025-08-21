@@ -1,4 +1,4 @@
-return { 
+ return {
    'echasnovski/mini.nvim', version = false,
     config = function()
         local height = math.floor(0.618 * vim.o.lines)
@@ -60,9 +60,9 @@ return {
         -- MINI.STATUSLINE
         require('mini.statusline').setup()
         -- MINI.TABLINE
-        require('mini.tabline').setup({
-            show_icons = false
-        })
+        -- require('mini.tabline').setup({
+        --     show_icons = false
+        -- })
 
         -- MINI.PICK 
         require('mini.pick').setup({
