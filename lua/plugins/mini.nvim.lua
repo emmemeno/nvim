@@ -1,42 +1,51 @@
  return {
    'echasnovski/mini.nvim', version = false,
     config = function()
+        local config_path = vim.fn.stdpath('config')
         local height = math.floor(0.618 * vim.o.lines)
         local width = math.floor(0.618 * vim.o.columns)
         -- MINI.STARTER
-        require('mini.starter').setup()
+        require('mini.starter').setup({
+            items = {
+                item =
+                {
+                    section = "My Projects",
+                    name = "VoidQuest",
+                    action = ":edit ~/dev/voidquest/cargo.toml",
+                },
+                {
+                    section = "Navigation & Help",
+                    name = "Pick",
+                    action = ":Pick files tool='git'",
+                },
+                {
+                    section = "Navigation & Help",
+                    name = "Files",
+                    action = ":lua MiniFiles.open()",
+                },
+                {
+                    section = "Navigation & Help",
+                    name = "Quit",
+                    action = ":qa!",
+                },
+
+                {
+                    section = "Others",
+                    name = "Neovim Config",
+                    action = ":edit " .. config_path .."/init.lua",
+                }
+            }
+            -- {
+            --     name = "Quit",
+            --     action =":qa!",
+            -- }
+        })
         -- MINI.AI
         require('mini.ai').setup()
         -- MINI.ANIMATE
         require('mini.animate').setup()
         -- MINI.ICONS
         require('mini.icons').setup()
-        -- MINI.BASE16
-        -- require('mini.base16').setup({
-        --     palette = {
-        --         base00 = "#181818",
-        --         base01 = "#282828",
-        --         base02 = "#383838",
-        --         base03 = "#585858",
-        --         base04 = "#b8b8b8",
-        --         base05 = "#d8d8d8",
-        --         base06 = "#e8e8e8",
-        --         base07 = "#f8f8f8",
-        --         base08 = "#ab4642",
-        --         base09 = "#dc9656",
-        --         base0A = "#f7ca88",
-        --         base0B = "#a1b56c",
-        --         base0C = "#86c1b9",
-        --         base0D = "#7cafc2",
-        --         base0E = "#ba8baf",
-        --         base0F = "#a16946",
-        --     },
-        --     use_cterm = true,
-        --     plugins = {
-        --       default = false,
-        --       ['echasnovski/mini.nvim'] = true,
-        --     },
-        -- })
         -- MINI.COMMENT
         require('mini.comment').setup()
         -- MINI.BRACKETED
@@ -57,13 +66,6 @@
                 title_pos = 'right',
             } }
         })
-        -- MINI.STATUSLINE
-        require('mini.statusline').setup()
-        -- MINI.TABLINE
-        -- require('mini.tabline').setup({
-        --     show_icons = false
-        -- })
-
         -- MINI.PICK 
         require('mini.pick').setup({
             window = { config = {
@@ -73,5 +75,15 @@
               border = 'double',
             } }
         })
+
+        -- MINI.STATUSLINE
+        require('mini.statusline').setup()
+        -- MINI.TABLINE
+        -- require('mini.tabline').setup({
+        --     show_icons = false
+        -- })
+
+        -- MINI.MOVE
+        require('mini.move').setup()
     end
 }
