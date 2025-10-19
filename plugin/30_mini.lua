@@ -32,8 +32,7 @@ local now, later = MiniDeps.now, MiniDeps.later
 -- - `:h mini.nvim-color-schemes` - list of other color schemes
 -- - `:h MiniHues-examples` - how to define highlighting with 'mini.hues'
 -- - 'plugin/40_plugins.lua' honorable mentions - other good color schemes
-now(function() vim.cmd('colorscheme miniwinter') end)
-
+-- now(function() vim.cmd('colorscheme miniwinter') end)
 -- You can try these other 'mini.hues'-based color schemes (uncomment with `gcc`):
 -- now(function() vim.cmd('colorscheme minispring') end)
 -- now(function() vim.cmd('colorscheme minisummer') end)
@@ -296,7 +295,7 @@ end)
 --
 -- It is not enabled by default because it is not really needed on a daily basis.
 -- Uncomment next line (use `gcc`) to enable.
--- later(function() require('mini.colors').setup() end)
+later(function() require('mini.colors').setup() end)
 
 -- Comment lines. Provides functionality to work with commented lines.
 -- Uses `:h 'commentstring'` option to infer comment structure.

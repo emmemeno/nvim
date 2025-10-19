@@ -54,6 +54,7 @@ now_if_args(function()
     'lua',
     'vimdoc',
     'markdown',
+    'rust'
   }
   local isnt_installed = function(lang)
     return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
@@ -161,12 +162,102 @@ later(function() add('rafamadriz/friendly-snippets') end)
 -- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
 -- have full support of its highlight groups. Use if you don't like 'miniwinter'
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
+-- now(function()
+--   --   -- Install only those that you need
+--   add('sainnhe/everforest')
+--   vim.g.everforest_enable_italic = true
+--   vim.g.everforest_background = 'medium'
+--   vim.g.everforest_ui_contrast = 'soft'
+--   -- add('Shatur/neovim-ayu')
+--   -- add('sainnhe/gruvbox-material')
+--   -- vim.g.gruvbox_material_enable_italic = true
+--   -- vim.g.gruvbox_material_background = 'soft'
+--   -- vim.cmd('color everforest')
+-- end)
+
+-- ColorScheme
 now(function()
-  --   -- Install only those that you need
-  --   add('sainnhe/everforest')
-  --   add('Shatur/neovim-ayu')
-  add('sainnhe/gruvbox-material')
-  vim.g.gruvbox_material_enable_italic = true
-  vim.g.gruvbox_material_background = 'soft'
-  vim.cmd('color gruvbox-material')
+  add('wtfox/jellybeans.nvim')
+  local custom_color = {
+      accent_1 = "#b39066",
+      accent_2 = "#2f77ad",
+      accent_3 = "#338844",
+      error =    "#aa4455",
+      warning =  "#a59a29",
+      info =     "#856a29",
+      -- white scale, from light to dark
+      white =    "#aaaaaa",
+      gray_1 =   "#777777",
+      gray_2 =   "#555555",
+
+      black_1 =     "#302f2d",
+      black_2 =     "#2a2822",
+      black_3 =     "#242422",
+      black_4 =     "#1f1f1f",
+   }
+
+  require('jellybeans').setup({
+
+    on_highlights = function(hl, c)
+      -- general
+      hl["Visual"] = { bg = custom_color.black_3}
+      hl["Pmenu"] = { fg = custom_color.gray_2, bg = custom_color.black_3}
+      hl["PmenuSel"] = { fg = custom_color.gray_1, bg = custom_color.black_4}
+      hl["CursorLine"] = { bg = custom_color.black_2}
+      hl["Search"] = { fg = custom_color.gray_1, bg = custom_color.black_3}
+      hl["CurSearch"] = { fg = custom_color.white, bg = custom_color.black_4}
+      -- mini tabline
+      hl.MiniTabLineHidden = { fg = custom_color.gray_1, bg = custom_color.black_1}
+      hl.MiniTabLineCurrent = { fg = custom_color.accent_3, bg = c.background}
+      hl.MiniTabLineModifiedCurrent = { fg = custom_color.accent_1, bg = c.background, italic = true}
+      hl.MiniTabLineModifiedHidden = { fg = custom_color.gray_1, bg = custom_color.black_1, italic = true}
+      -- mini statusline
+      hl["MiniStatusLineModeNormal"] = { bg = custom_color.accent_3, fg = custom_color.black_2}
+      hl["MiniStatusLineModeInsert"] = { bg = custom_color.accent_2, fg = custom_color.black_2}
+      hl["MiniStatusLineModeVisual"] = { bg = custom_color.accent_1, fg = custom_color.black_2}
+      hl["MiniStatusLineDevInfo"] = { fg = custom_color.gray_1, bg = custom_color.black_4}
+      hl["MiniStatusLineFileName"] = { fg = custom_color.gray_1, bg = custom_color.black_2}
+      hl["MiniStatusLineFileInfo"] = { fg = custom_color.gray_1, bg = custom_color.black_2}
+      hl["MiniStatusLineInactive"] = { fg = custom_color.gray_2, bg = custom_color.black_2}
+      hl["MiniStatusLineModeOther"] = { fg = custom_color.gray_2, bg = custom_color.black_2}
+      -- todo, fixme, hack, note
+      hl.MiniHipatternsFixme = { fg = custom_color.error, bold = true}
+      hl.MiniHipatternsTodo = { fg = c.accent_color_2, bold = true}
+      hl.MiniHipatternsNote = { fg = custom_color.warning, bold = true}
+      hl.MiniHipatternsHack = { fg = custom_color.info, bold = true}
+      -- syntax
+      hl["@lsp.mod.documentation.rust"] = { fg = custom_color.gray_1}
+      hl["@comment.documentation.rust"] = { fg = custom_color.gray_1}
+      hl["DiagnosticUnderlineHint"] = { blend = 100,  underdashed = true}
+      hl["DiagnosticUnnecessary"] = { blend = 100,  underdashed = true}
+      hl["Title"] = {fg = c.accent_color_2}
+      -- mini files
+      hl["MiniFilesNormal"] = {fg = custom_color.white, bg = custom_color.black_3}
+      -- git diff (colored left numbers)
+      hl["MiniDiffSignAdd"] = { fg = custom_color.accent_3}
+      hl["MiniDiffSignChange"] = { fg = custom_color.accent_2}
+      hl["MiniDiffSignDelete"] = { fg = custom_color.error}
+      -- Vimdoc
+      hl["@label.vimdoc"] = { fg = custom_color.accent_2, bold = true}
+      hl["@markup.link"] = { fg = custom_color.accent_1}
+      -- Neogit
+      hl["NeogitSectionHeader"] = { fg = custom_color.accent_2}
+      hl["NeogitDiffContext"] = { fg = custom_color.gray_1, bg = custom_color.black_1 }
+      hl["NeogitDiffAdd"] = { fg = custom_color.accent_2, bg = custom_color.black_1 }
+      hl["NeogitDiffDelete"] = { fg = custom_color.error, bg = custom_color.black_1 }
+      hl["NeogitDiffHeader"] = { fg = custom_color.accent_2, bg = custom_color.black_1 }
+      hl["NeogitDiffContextHighlight"] = {link = 'NeogitDiffContext'}
+      hl["NeogitDiffAddHighlight"] = { link = 'NeogitDiffAdd'}
+      hl["NeogitDiffDeleteHighlight"] = { link = 'NeogitDiffDelete'}
+      hl["NeogitDiffHeaderHighlight"] = { link = 'NeogitDiffHeader'}
+    end,
+    on_colors = function(c)
+      c.background = custom_color.black_1
+      c.foreground = custom_color.white
+      c.str = vim.o.background == "dark" and custom_color.accent_3
+      c.accent_color_1 = vim.o.background == "dark" and  custom_color.accent_1
+      c.accent_color_2 = vim.o.background == "dark" and  custom_color.accent_2
+    end
+  })
+  vim.cmd('color jellybeans-mono')
 end)
