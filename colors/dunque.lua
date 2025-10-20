@@ -1,5 +1,5 @@
 local p = {
-  red = "#ad846b",
+  red = "#a96951",
   green = "#899159",
   blue = "#5b798f",
   yellow = "#877845",
@@ -21,9 +21,9 @@ local p = {
   hi('CursorColumn',   { fg=nil,       bg=p.very_dark_gray})
   hi('CursorIM',       { link='Cursor' })
   hi('CursorLine',     { fg=nil,       bg=p.very_dark_gray })
-  hi('CursorLineFold', { fg=p.very_dark_gray, bg=nil })
-  hi('CursorLineNr',   { fg=p.accent,  bg=nil,       bold=true })
-  hi('CursorLineSign', { fg=p.very_dark_gray, bg=nil })
+  hi('CursorLineFold', { link='CursorLine' })
+  hi('CursorLineNr',   { fg=p.light_gray,  bg=nil,       bold=true })
+  hi('CursorLineSign', { link='CursorLine' })
   hi('DiffAdd',        { fg=p.green,       bg=nil })
   hi('DiffChange',     { fg=p.blue,       bg=nil })
   hi('DiffDelete',     { fg=p.red,       bg=nil })
@@ -38,7 +38,7 @@ local p = {
   hi('Folded',         { fg=p.very_dark_gray, bg=nil })
   hi('IncSearch',      { fg=p.black,      bg=p.green })
   hi('lCursor',        { fg=p.black,      bg=p.light_gray })
-  hi('LineNr',         { fg=p.very_dark_gray, bg=nil })
+  hi('LineNr',         { fg=p.dark_gray, bg=nil })
   hi('LineNrAbove',    { link='LineNr' })
   hi('LineNrBelow',    { link='LineNr' })
   hi('MatchParen',     { fg=nil,       bg=p.very_dark_gray, bold=true })
@@ -347,7 +347,10 @@ local p = {
   end
 
   -- Rust Specific Semantic
-  hi('@lsp.typemod.method.declaration.rust', { fg=nil, bg=nil, bold=true})
+  hi('@lsp.typemod.method.declaration.rust', { fg=nil, bg=nil, italic=true})
+  hi('@lsp.typemod.function.declaration.rust', { fg=nil, bg=nil, italic=true})
+  hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
+  hi('@lsp.typemod.derive.attribute.rust', { fg=p.dark_gray, bg=nil})
 
   -- Built-in diagnostic
   hi('DiagnosticError', { fg=p.red,    bg=nil })
@@ -437,4 +440,4 @@ local p = {
   hi('MiniHipatternsHack', { fg = p.yellow, bold = true})
 
   -- Mini Indent
-  hi('MiniIndentscopeSymbol', {fg = p.very_dark_gray})
+  hi('MiniIndentscopeSymbol', {fg = p.very_dark_gray, bg=p.black})

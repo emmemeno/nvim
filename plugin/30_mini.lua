@@ -484,10 +484,11 @@ end)
 --
 -- See also:
 -- - `:h MiniIndentscope.gen_animation` - available animation rules
-later(function() require('mini.indentscope').setup({
+local mini_indent = require('mini.indentscope')
+later(function() mini_indent.setup({
   draw = {
     delay = 200,
-    animation = MiniIndentscope.gen_animation.quadratic({ easing = 'out', duration = 1000, unit = 'total' })
+    animation = mini_indent.gen_animation.quadratic({ easing = 'out', duration = 1000, unit = 'total' })
   }
 
 }) end)
