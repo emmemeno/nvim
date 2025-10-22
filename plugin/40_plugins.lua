@@ -179,3 +179,4 @@ later(function() add('rafamadriz/friendly-snippets') end)
 now(function()
   vim.cmd('color dunque')
 end)
+

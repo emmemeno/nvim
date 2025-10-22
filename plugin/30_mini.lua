@@ -523,8 +523,8 @@ later(function() require('mini.jump2d').setup() end)
 -- - `:h MiniKeymap-examples` - examples of common setups
 -- - `:h MiniKeymap.map_multistep()` - map multi-step action
 -- - `:h MiniKeymap.map_combo()` - map combo
-later(function()
-  require('mini.keymap').setup()
+-- later(function()
+  -- require('mini.keymap').setup()
   -- Navigate 'mini.completion' menu with `<Tab>` /  `<S-Tab>`
   -- MiniKeymap.map_multistep('i', '<Tab>', { 'pmenu_next' })
   -- MiniKeymap.map_multistep('i', '<S-Tab>', { 'pmenu_prev' })
@@ -532,8 +532,8 @@ later(function()
   -- for pairs from 'mini.pairs'
   -- MiniKeymap.map_multistep('i', '<CR>', { 'pmenu_accept', 'minipairs_cr' })
   -- On `<BS>` just try to account for pairs from 'mini.pairs'
-  MiniKeymap.map_multistep('i', '<BS>', { 'minipairs_bs' })
-end)
+  -- MiniKeymap.map_multistep('i', '<BS>', { 'minipairs_bs' })
+-- end)
 
 -- Window with text overview. It is displayed on the right hand side. Can be used
 -- for quick overview and navigation. Hidden by default. Example usage:
@@ -641,10 +641,10 @@ end)
 -- - `)` when there is ")" to the right - jump over ")" without inserting new one
 -- - `<C-v>(` - always insert a single "(" literally. This is useful since
 --   'mini.pairs' doesn't provide particularly smart behavior, like auto balancing
-later(function()
+-- later(function()
   -- Create pairs not only in Insert, but also in Command line mode
-  require('mini.pairs').setup({ modes = { command = true } })
-end)
+  -- require('mini.pairs').setup({ modes = { command = true } })
+-- end)
 
 -- Pick anything with single window layout and fast matching. This is one of
 -- the main usability improvements as it powers a lot of "find things quickly"
