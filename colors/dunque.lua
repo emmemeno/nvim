@@ -432,6 +432,24 @@ local p = {
   hi('MiniStatusLineFileInfo', { fg = p.light_gray, bg = p.very_dark_gray})
   hi('MiniStatusLineInactive', { fg = p.light_gray, bg = p.very_dark_gray})
 
+  -- Mini Picker
+  hi('MiniPickBorder', {link='normal'})
+  hi('MiniPickBorderBusy', {link='normal'})
+  hi('MiniPickBorderText', {link='normal'})
+  hi('MiniPickCursor', {link='normal'})
+  hi('MiniPickIconDirectory', {link='normal'})
+  hi('MiniPickIconFile', {link='normal'})
+  hi('MiniPickHeader', {link='normal'})
+  hi('MiniPickMatchCurrent', {link='normal'})
+  hi('MiniPickMatchMarked', {link='normal'})
+  hi('MiniPickMatchRanges', {link='normal'})
+  hi('MiniPickNormal', {link='normal'})
+  hi('MiniPickPreviewLine', {link='normal'})
+  hi('MiniPickPreviewRegion', {link='normal'})
+  hi('MiniPickPrompt', {link='normal'})
+  hi('MiniPickPromptCaret', {link='normal'})
+  hi('MiniPickPromptPrefix', {link='normal'})
+
   -- Mini HiPatterns, aka:
   -- todo, fixme, hack, note
   hi('MiniHipatternsFixme', { fg = p.red, bold = true})
