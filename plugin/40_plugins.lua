@@ -180,3 +180,8 @@ now(function()
   vim.cmd('color dunque')
 end)
 
+-- render-markdown
+later(function()
+  add('https://github.com/MeanderingProgrammer/render-markdown.nvim')
+  require('render-markdown').setup({})
+end)
