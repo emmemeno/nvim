@@ -351,6 +351,11 @@ local p = {
   hi('@lsp.typemod.function.declaration.rust', { fg=nil, bg=nil, italic=true})
   hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
   hi('@lsp.typemod.derive.attribute.rust', { fg=p.dark_gray, bg=nil})
+  hi('@lsp.type.builtinType.rust', { fg=p.red, bg=nil})
+  hi('@lsp.typemod.selfKeyword.reference.rust', { fg=nil, bg=nil, bold=true})
+
+  -- Lua Specific Semantic
+  hi('@constant.builtin.lua', { fg=p.red, bg=nil})
 
   -- Built-in diagnostic
   hi('DiagnosticError', { fg=p.red,    bg=nil })
@@ -365,11 +370,11 @@ local p = {
   hi('DiagnosticUnderlineOk',    { fg=nil, bg=nil, sp=p.green,  underline=true })
   hi('DiagnosticUnderlineWarn',  { fg=nil, bg=nil, sp=p.yellow, underline=true })
 
-  hi('DiagnosticFloatingError', { fg=p.red,    bg=p.very_dark_gray })
-  hi('DiagnosticFloatingHint',  { fg=p.blue,   bg=p.very_dark_gray })
-  hi('DiagnosticFloatingInfo',  { fg=p.blue,   bg=p.very_dark_gray })
-  hi('DiagnosticFloatingOk',    { fg=p.green,  bg=p.very_dark_gray })
-  hi('DiagnosticFloatingWarn',  { fg=p.yellow, bg=p.very_dark_gray })
+  hi('DiagnosticFloatingError', { fg=p.red,    bg=nil })
+  hi('DiagnosticFloatingHint',  { fg=p.blue,   bg=nil })
+  hi('DiagnosticFloatingInfo',  { fg=p.blue,   bg=nil })
+  hi('DiagnosticFloatingOk',    { fg=p.green,  bg=nil })
+  hi('DiagnosticFloatingWarn',  { fg=p.yellow, bg=nil })
 
   hi('DiagnosticVirtualTextError', { link='DiagnosticError' })
   hi('DiagnosticVirtualTextWarn',  { link='DiagnosticWarn' })
@@ -440,10 +445,10 @@ local p = {
   hi('MiniPickIconDirectory', {link='normal'})
   hi('MiniPickIconFile', {link='normal'})
   hi('MiniPickHeader', {link='normal'})
-  hi('MiniPickMatchCurrent', {link='normal'})
-  hi('MiniPickMatchMarked', {link='normal'})
+  hi('MiniPickMatchCurrent', {fg=p.light_gray})
+  hi('MiniPickMatchMarked', {fg=nil, bg=p.green})
   hi('MiniPickMatchRanges', {link='normal'})
-  hi('MiniPickNormal', {link='normal'})
+  hi('MiniPickNormal', { fg=p.dark_gray, bg=nil})
   hi('MiniPickPreviewLine', {link='normal'})
   hi('MiniPickPreviewRegion', {link='normal'})
   hi('MiniPickPrompt', {link='normal'})
