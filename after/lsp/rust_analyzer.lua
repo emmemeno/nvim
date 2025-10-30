@@ -7,12 +7,25 @@ return {
     -- Use this function to define buffer-local mappings and behavior that depend
   end,
   settings = {
-    ['rust_analyzer'] = {
-      completion = {
-        callable = {
-          snippets = false
-        }
-      }
-    }
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = true,
+      inlayHints = {
+        bindingModeHints = { enable = true },
+        closureReturnTypeHints = { enable = true },
+        lifetimeElisionHints = { enable = true },
+        parameterHints = { enable = true },
+        typeHints = { enable = true },
+      },
+      diagnostics = {
+        enable = true,
+        experimental = { enable = true },
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
   },
 }
