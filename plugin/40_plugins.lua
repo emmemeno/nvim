@@ -133,6 +133,13 @@ later(function()
   })
 end)
 
+-- Marks =====================================================================
+
+later(function()
+  add('fnune/recall.nvim')
+  require('recall').setup({})
+end)
+
 -- Snippets ===================================================================
 
 -- Although 'mini.snippets' provides functionality to manage snippet files, it

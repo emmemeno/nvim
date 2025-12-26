@@ -64,7 +64,7 @@ _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>f', desc = '+Find' },
   { mode = 'n', keys = '<Leader>g', desc = '+Git' },
   { mode = 'n', keys = '<Leader>l', desc = '+Language' },
-  { mode = 'n', keys = '<Leader>m', desc = '+Map' },
+  { mode = 'n', keys = '<Leader>m', desc = '+Marks' },
   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
@@ -160,6 +160,12 @@ nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols documen
 nmap_leader('fv', '<Cmd>Pick visit_paths cwd=""<CR>',           'Visit paths (all)')
 nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
 
+-- Recall Macros for Marks navitagion:
+nmap_leader('mm', '<Cmd>RecallToggle<CR>',    'Toggle Mark')
+nmap_leader('mn', '<Cmd>RecallNext<CR>',      'Next Mark')
+nmap_leader('mp', '<Cmd>RecallPrevious<CR>',  'Previous Mark')
+nmap_leader('mc', '<Cmd>RecallClear<CR>',     'Clear all Marks')
+
 -- g is for 'Git'. Common usage:
 -- - `<Leader>gs` - show information at cursor
 -- - `<Leader>go` - toggle 'mini.diff' overlay to show in-buffer unstaged changes
@@ -207,10 +213,10 @@ xmap_leader('lf', formatting_cmd, 'Format selection')
 -- - `<Leader>mt` - toggle map from 'mini.map' (closed by default)
 -- - `<Leader>mf` - focus on the map for fast navigation
 -- - `<Leader>ms` - change map's side (if it covers something underneath)
-nmap_leader('mf', '<Cmd>lua MiniMap.toggle_focus()<CR>', 'Focus (toggle)')
-nmap_leader('mr', '<Cmd>lua MiniMap.refresh()<CR>',      'Refresh')
-nmap_leader('ms', '<Cmd>lua MiniMap.toggle_side()<CR>',  'Side (toggle)')
-nmap_leader('mt', '<Cmd>lua MiniMap.toggle()<CR>',       'Toggle')
+-- nmap_leader('mf', '<Cmd>lua MiniMap.toggle_focus()<CR>', 'Focus (toggle)')
+-- nmap_leader('mr', '<Cmd>lua MiniMap.refresh()<CR>',      'Refresh')
+-- nmap_leader('ms', '<Cmd>lua MiniMap.toggle_side()<CR>',  'Side (toggle)')
+-- nmap_leader('mt', '<Cmd>lua MiniMap.toggle()<CR>',       'Toggle')
 
 -- o is for 'Other'. Common usage:
 -- - `<Leader>oz` - toggle between "zoomed" and regular view of current buffer
