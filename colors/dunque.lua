@@ -1,8 +1,9 @@
 local p = {
-  red = "#a96951",
+  red = "#a1703f",
   green = "#899159",
   blue = "#5b798f",
   yellow = "#877845",
+  purple = "#865f96",
   black = "#24211b",
   very_dark_gray = "#383836",
   dark_gray = "#565755",
@@ -103,7 +104,7 @@ local p = {
   hi('Error',          { fg=p.red,       bg=nil })
   hi('Exception',      { link='Statement' })
   hi('Float',          { link='Constant' })
-  hi('Function',       { fg=p.light_gray,   bg=nil })
+  hi('Function',       { fg=p.purple,   bg=nil })
   hi('Identifier',     { fg=p.light_gray,  bg=nil })
   hi('Ignore',         { fg=nil,       bg=nil })
   hi('Include',        { link='PreProc' })
