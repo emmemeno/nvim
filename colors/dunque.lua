@@ -350,6 +350,8 @@ local p = {
 
   -- Rust Specific Semantic
   hi('@lsp.type.builtinType.rust', { fg=p.yellow, bg=nil})
+  hi('@lsp.type.enumMember.rust', { fg=p.light_gray, bg=nil})
+  hi('@number.rust', { fg=p.light_gray, bg=nil})
   hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
   hi('@lsp.typemod.method.declaration.rust', { fg=nil, bg=nil, italic=true})
   hi('@lsp.typemod.function.declaration.rust', { fg=nil, bg=nil, italic=true})
