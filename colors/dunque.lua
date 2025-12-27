@@ -349,12 +349,12 @@ local p = {
   end
 
   -- Rust Specific Semantic
+  hi('@lsp.type.builtinType.rust', { fg=p.yellow, bg=nil})
+  hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
   hi('@lsp.typemod.method.declaration.rust', { fg=nil, bg=nil, italic=true})
   hi('@lsp.typemod.function.declaration.rust', { fg=nil, bg=nil, italic=true})
-  hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
-  hi('@lsp.typemod.derive.attribute.rust', { fg=p.dark_gray, bg=nil})
-  hi('@lsp.type.builtinType.rust', { fg=p.yellow, bg=nil})
-  hi('@lsp.typemod.selfKeyword.reference.rust', { fg=nil, bg=nil, bold=true})
+  hi('@lsp.typemod.derive.attribute.rust', { fg=p.gray, bg=nil})
+  hi('@lsp.typemod.selfKeyword.reference.rust', { fg=p.gray, bg=nil, bold=true})
 
   -- Lua Specific Semantic
   hi('@constant.builtin.lua', { fg=p.white, bg=nil})
