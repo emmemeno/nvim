@@ -81,8 +81,8 @@ vim.o.iskeyword = '@,48-57,_,192-255,-' -- Treat dash as `word` textobject part
 vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 
 -- Built-in completion
-vim.o.complete    = '.,w,b,kspell'                  -- Use less sources
-vim.o.completeopt = 'menuone,noselect,fuzzy,nosort' -- Use custom behavior
+-- vim.o.complete    = '.,w,b,kspell'                  -- Use less sources
+-- vim.o.completeopt = 'menuone,noselect,fuzzy,nosort' -- Use custom behavior
 
 -- Autocommands ===============================================================
 

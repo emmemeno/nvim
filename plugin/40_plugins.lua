@@ -182,6 +182,57 @@ later(function() add('rafamadriz/friendly-snippets') end)
 --   -- vim.cmd('color everforest')
 -- end)
 
+-- Blink (autocompletion)
+-- OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+local function build_blink(params)
+  vim.notify('Building blink.cmp', vim.log.levels.INFO)
+  local obj = vim.system({ 'cargo', 'build', '--release' }, { cwd = params.path }):wait()
+  if obj.code == 0 then
+    vim.notify('Building blink.cmp done', vim.log.levels.INFO)
+  else
+    vim.notify('Building blink.cmp failed', vim.log.levels.ERROR)
+  end
+end
+
+later(function()
+  add({
+  source = 'Saghen/blink.cmp',
+  hooks = {
+    post_install = build_blink,
+    post_checkout = build_blink,
+  },
+})
+  require('blink.cmp').setup({
+    keymap = { preset = 'default' },
+    appearance = {
+      nerd_font_variant = 'mono',
+    },
+    completion = {
+      trigger = {
+        show_on_trigger_character = true,
+        show_on_blocked_trigger_characters = { ' ', '\n', '\t' }
+      },
+      ghost_text = {
+        -- enabled = true
+      },
+      documentation = { auto_show = false },
+      menu = {
+        -- Delay before showing the completion menu while typing
+        auto_show_delay_ms = 500,
+        -- Disable auto menu
+        -- auto_show = false,
+      }
+    },
+    sources = {
+      default = { 'lsp', 'path', 'buffer' },
+    },
+    signature = { enabled = true },
+    fuzzy = {
+      implementation = 'prefer_rust',
+    },
+  })
+end)
+
 -- ColorScheme
 now(function()
   vim.cmd('color dunque')
