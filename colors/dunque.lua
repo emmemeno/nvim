@@ -1,14 +1,15 @@
 local p = {
-  red = "#a1703f",
-  green = "#899159",
-  blue = "#5b798f",
-  yellow = "#877845",
-  purple = "#865f96",
-  black = "#24211b",
-  very_dark_gray = "#383836",
-  dark_gray = "#565755",
-  light_gray = "#949593",
-  white = "#e4e3df"
+  red =             "#cc241d",
+  green =           "#98971a",
+  blue =            "#458588",
+  yellow =          "#d79921",
+  purple =          "#b16286",
+  black =           "#282828", -- background
+  very_dark_gray =  "#3c3836",
+  dark_gray =       "#665c54",
+  gray =            "#928374",
+  light_gray =      "#bdae93",
+  white =           "#ebdbb2"
 }
 
  local hi = function(name, data) vim.api.nvim_set_hl(0, name, data) end
@@ -97,7 +98,7 @@ local p = {
   hi('Character',      { link='Constant' })
   hi('Comment',        { fg=p.dark_gray, bg=nil })
   hi('Conditional',    { link='Statement' })
-  hi('Constant',       { fg=p.green,  bg=nil })
+  hi('Constant',       { fg=p.white,  bg=nil })
   hi('Debug',          { link='Special' })
   hi('Define',         { link='PreProc' })
   hi('Delimiter',      { fg=p.light_gray,  bg=nil })
@@ -125,7 +126,7 @@ local p = {
   hi('Structure',      { link='Type' })
   hi('Tag',            { link='Special' })
   hi('Todo',           { fg=p.blue,  bg=nil, bold=true })
-  hi('Type',           { fg=p.red,      bg=nil })
+  hi('Type',           { fg=p.yellow,      bg=nil })
   hi('Typedef',        { link='Type' })
 
     -- Built-in snippets
@@ -352,11 +353,11 @@ local p = {
   hi('@lsp.typemod.function.declaration.rust', { fg=nil, bg=nil, italic=true})
   hi('@keyword.function.rust', { fg=p.blue, bg=nil, italic=true})
   hi('@lsp.typemod.derive.attribute.rust', { fg=p.dark_gray, bg=nil})
-  hi('@lsp.type.builtinType.rust', { fg=p.red, bg=nil})
+  hi('@lsp.type.builtinType.rust', { fg=p.yellow, bg=nil})
   hi('@lsp.typemod.selfKeyword.reference.rust', { fg=nil, bg=nil, bold=true})
 
   -- Lua Specific Semantic
-  hi('@constant.builtin.lua', { fg=p.red, bg=nil})
+  hi('@constant.builtin.lua', { fg=p.white, bg=nil})
 
   -- Built-in diagnostic
   hi('DiagnosticError', { fg=p.red,    bg=nil })
@@ -430,7 +431,7 @@ local p = {
 
   hi('MiniStatusLineModeNormal', { fg = p.black, bg = p.blue})
   hi('MiniStatusLineModeInsert', { fg = p.black, bg = p.green})
-  hi('MiniStatusLineModeVisual', { fg = p.black, bg = p.red})
+  hi('MiniStatusLineModeVisual', { fg = p.black, bg = p.purple})
   hi('MiniStatusLineModeCommand', { fg = p.black, bg = p.yellow})
   hi('MiniStatusLineModeOther', { fg = p.black, bg = p.yellow})
   hi('MiniStatusLineDevInfo', { fg = p.light_gray, bg = p.very_dark_gray})
